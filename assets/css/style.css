@@ -1,0 +1,552 @@
+:root{
+    /* CORES */
+    --cinza: #cecece;
+    --branco: white;
+    --preto: #262626;
+/*  i wnat a code  */
+    /* FONTES */
+    --fontes-Titulos: 3rem;
+    --fontes-Paragrafo: 2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #cecece;
+}
+
+/* ===================== CSS DA LOGO EM 3D ===================== */
+.tilt-box-wrap{
+    max-width: 500px;
+    width: 90vw;
+    max-height: 900px;
+    height: 850px;
+    position: relative;
+    transition: all 0.6s ease-out;
+    perspective: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tilt-box-wrap:hover {
+    transition: all 0.5s linear;
+    transform: scale(1.1);
+}
+.tilt-box{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    transition: all 0.6s ease-out;
+    transform: rotateX(0deg) rotateY(0deg);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+.tilt-box img {
+    transform: translateZ(40px);
+}
+.t_over {
+    width: 33.333%;
+    height: 33.333%;
+    position: absolute;
+    z-index: 1;
+}
+.t_over:nth-child(1){left: 0; top: 0;}
+.t_over:nth-child(2){left: 33.333%; top: 0;}
+.t_over:nth-child(3){left: 66.666%; top: 0;}
+.t_over:nth-child(4){left: 0; top: 33.333%;}
+.t_over:nth-child(5){left: 33.333%; top: 33.333%;}
+.t_over:nth-child(6){left: 66.666%; top: 33.333%;}
+.t_over:nth-child(7){left: 0; top: 66.666%;}
+.t_over:nth-child(8){left: 33.333%; top: 66.666%;}
+.t_over:nth-child(9){left: 66.666%; top: 66.666%;}
+
+.t_over:nth-child(1):hover ~ .tilt-box{ transform: rotateX(-20deg) rotateY(20deg);}
+.t_over:nth-child(2):hover ~ .tilt-box{ transform: rotateX(-20deg) rotateY(0deg);}
+.t_over:nth-child(3):hover ~ .tilt-box{ transform: rotateX(-20deg) rotateY(-20deg);}
+.t_over:nth-child(4):hover ~ .tilt-box{ transform: rotateX(0deg) rotateY(20deg);}
+.t_over:nth-child(5):hover ~ .tilt-box{ transform: rotateX(0deg) rotateY(0deg);}
+.t_over:nth-child(6):hover ~ .tilt-box{ transform: rotateX(0deg) rotateY(-20deg);}
+.t_over:nth-child(7):hover ~ .tilt-box{ transform: rotateX(20deg) rotateY(20deg);}
+.t_over:nth-child(8):hover ~ .tilt-box{ transform: rotateX(20deg) rotateY(0deg);}
+.t_over:nth-child(9):hover ~ .tilt-box{ transform: rotateX(20deg) rotateY(-20deg);}
+
+/* ===================== CSS DA LOGO EM 3D ===================== */
+
+.logo {
+    max-width: 1200px;
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+.logo img {
+    max-width: 925px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+}
+.logo p {
+    font-size: var(--fontes-Paragrafo);
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+/* AQUI COMEÇA O CSS DA MAIN */
+.container-galeria{
+    width: 90vw;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-wrap: wrap;
+    margin-bottom: 75px;
+    
+}
+.foto {
+    max-height: 300px;
+    max-width: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.foto img {
+    max-height: 100%;
+}
+
+.foto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #006b70;
+    opacity: 0.5;
+    transform: translateY(100%);
+    transition: all 0.5s;
+    transition-delay: 0.25s ;
+}
+.foto:hover::before {
+    transform: translateY(0);
+    transition-delay: 0s;
+    
+}
+.foto .caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: left;
+    margin-top: -10px;
+    margin-left: 10px;
+    color: white;
+    transition: all 0.25s;
+}
+.caption p {
+    padding: 5px;
+    font-size: 1.2rem;
+    line-height: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.25s;
+    transform: translateY(-20px);
+    opacity: 0;
+
+}
+.caption p span {
+    background-color: #262626;
+    opacity: 0.8;
+}
+.foto:hover .caption p{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.containerFazemos{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.containerFazemos h1 {
+    font-size: var(--fontes-Titulos);
+    margin-bottom: 50px;
+}
+.containerFazemos p {
+    font-size: var(--fontes-Paragrafo);
+    font-weight: lighter;
+    max-width: 660px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 120px;
+}
+
+
+
+/* CSS DOS PARCEIROS */
+.containerParceiros{
+    max-width: 1200px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.containerParceiros h1 {
+    margin-bottom: 45px;
+    font-size: var(--fontes-Titulos);
+}
+.parceiros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.parceiroLogo{
+    width: 300px;
+    height: 230px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.parceiroLogo img {
+    max-height: 150px;
+}
+.menor img {
+    max-height: 100px;
+}
+.parceiroLogo:hover {
+    transform: scale(1.4);
+}
+.font-regular{
+    font-weight: normal;
+    padding-top: 100px;
+    font-size: 2rem !important;
+    
+}
+
+/* CSS DO MAPA */
+.mapa {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+/* AQUI COMEÇA O FOOTER */
+footer {
+    background-color: rgb(226, 226, 226);
+    text-align: center;
+
+}
+
+.containerFooter{
+    max-width: 1200px;
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 0px;
+
+}
+.containerFooter div {
+    flex: 1;
+    text-align: left;
+    line-height: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+ul li a{
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--preto);
+    position: relative;
+    transition: all 0.5s;
+    padding: 0 20px;
+    z-index: 1;
+}
+a:hover {
+    color: white
+}
+ul li span {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    background-color: #6d6d6d;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transition: all 0.5s;
+    transform-origin: left;
+  }
+  a:hover span{
+    transform: scaleX(1);
+  }
+  span:nth-child(2) {
+    top: 25%;
+    transition-delay: 0.15s
+  }
+  
+  span:nth-child(3) {
+    top: 50%;
+    transition-delay: 0.3s
+  }
+  
+  span:nth-child(4) {
+    top: 75%;
+    transition-delay: 0.45s
+  }
+
+.contato h1 {
+    font-weight: normal;
+    font: 18px;
+}
+
+.direitosReservados{
+    padding: 30px 0;
+    max-width: 1200px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.direitosReservados h1 {
+    font-weight: lighter;
+    font-size: 1.8rem;
+    color: #7c7c7c;
+}
+
+
+.contato div a img {
+    max-width: 35px;
+    background-color: rgb(8, 8, 2);
+    padding: 7px;
+    border-radius: 5px;
+}
+.contato div a img:hover {
+    background-color: red;
+}
+
+/* ============== AQUI COMEÇA AS MEDIA QUERYS  ============== */
+@media (max-width: 768px) {
+    /* CSS LOGOMARCA E TEXTO */
+    .tilt-box-wrap {
+        height: 750px;
+        width: 80vw;
+    }
+    .tilt-box img {
+        width: 60vw;
+    }
+    .logo p {
+        margin-top: 80px;
+    }
+}
+@media (max-width: 650px) {
+    /* CSS FOOTER */
+    .containerFooter {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerFooter div {
+        text-align: center;
+    }
+    ul li a {
+        padding: 0;
+        text-align: center;
+    }
+    .contato {
+        text-align: center !important;
+    }
+}
+@media (max-width: 550px) {
+    html {
+        font-size: 55%;
+    }
+
+    /* CSS LOGOMARCA E TEXTO */
+    .tilt-box-wrap {
+        height: 500px;
+        width: 80vw;
+    }
+    .tilt-box img {
+        width: 60vw;
+    }
+    .logo p {
+        margin-top: 80px;
+    }
+    /* CSS FOOTER */
+    .containerFooter {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerFooter div {
+        text-align: center;
+    }
+    ul li a {
+        padding: 0;
+        text-align: center;
+    }
+    .contato {
+        text-align: center !important;
+    }
+}
+@media (max-width: 425px) {
+    html {
+        font-size: 55%;
+    }
+
+    /* CSS LOGOMARCA E TEXTO */
+    .tilt-box-wrap {
+        height: 500px;
+        width: 80vw;
+    }
+    .tilt-box img {
+        width: 60vw;
+    }
+    .logo p {
+        margin-top: 50px;
+    }
+
+    /* CSS FOOTER */
+    .containerFooter {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerFooter div {
+        text-align: center;
+    }
+    ul li a {
+        padding: 0;
+        text-align: center;
+    }
+    .contato {
+        text-align: center !important;
+    }
+}
+@media (max-width: 375px) {
+    html {
+        font-size: 50%;
+    }
+
+    /* CSS LOGOMARCA E TEXTO */
+    .tilt-box-wrap {
+        height: 500px;
+        width: 80vw;
+    }
+    .logo p {
+        margin-top: 30px;
+    }
+    /* CSS DA GALERIA */
+    .dpNone {
+        display: none;
+    }
+
+    /* CSS PARCEIROS */
+    /* CSS ENDEREÇO */
+    .font-regular {
+        text-align: center;
+        width: 75vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.5rem !important;
+        padding-top: 0px;
+        padding-bottom: 30px;
+    }
+
+    /* CSS FOOTER */
+    .containerFooter {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerFooter div {
+        text-align: center;
+    }
+    ul li a {
+        padding: 0;
+        text-align: center;
+    }
+    .contato {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 320px) {
+    html {
+        font-size: 50%;
+    }
+
+    /* CSS LOGOMARCA E TEXTO */
+    .tilt-box-wrap {
+        height: 500px;
+    }
+    .logo p {
+        margin-top: 30px;
+    }
+
+    /* CSS DA GALERIA */
+    .dpNone {
+        display: none;
+    }
+
+    /* CSS PARCEIROS */
+    /* CSS ENDEREÇO */
+    .font-regular {
+        text-align: center;
+        width: 75vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.5rem !important;
+        padding-top: 0px;
+        padding-bottom: 30px;
+    }
+    
+    /* CSS FOOTER */
+    .containerFooter {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerFooter div {
+        text-align: center;
+    }
+    ul li a {
+        padding: 0;
+        text-align: center;
+    }
+    .contato {
+        text-align: center !important;
+    }
+    
+}
